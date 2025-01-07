@@ -1,0 +1,65 @@
+<!-- track.html -->
+<!--   tracks are composed of:#
+    "track_id": str,
+    "title": str,
+    "artist_id": int,
+    "artist_name": str,
+    "danceability": float,
+    "duration": float,
+    "energy": float,
+    "key": int,
+    "loudness": float,
+    "mode": int,
+    "tempo": float,
+    "time_signature": int,
+    "year": int
+ -->
+
+<div 
+    class="flex-start-center flex-row flex-gap-1 full-width tile-container-secondary"
+    hx-get="{{ url_for('add_track_modal', track_id=track.track_id) }}"
+    hx-trigger="click"
+    id="track-{{ track.track_id }}"
+    hx-swap="outerHTML"
+>
+  <div class="full-width track-container">
+    <h2>{{ track.title }}</h2>
+    <h3>by {{ track.artist_name }}</h3>
+    <h4 id="track-id">Track ID: {{ track.track_id }}</h4>
+
+    <hr></hr>
+
+    <div class="max-height-5rem scroll-y">
+    <div class="flex-start-center flex-row full-width flex-wrap flex-gap-1">
+      {% for tag in track.tags %}
+        <div class="pill-small">
+          <span>{{ tag.name }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+
+    <h3>Track Details</h3>
+    <table class="full-width table">
+        <tr>
+            <th>Attribute</th>
+            <th>Danceability</th>
+            <th>Duration</th>
+            <th>Energy</th>
+            <th>Loudness</th>
+            <th>Tempo</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td>Value</td>
+            <td>{{ track.danceability }}</td>
+            <td>{{ track.duration }}</td>
+            <td>{{ track.energy }}</td>
+            <td>{{ track.loudness }}</td>
+            <td>{{ track.tempo }}</td>
+            <td>{{ track.year }}</td>
+        </tr>
+    </table>
+
+  </div>
+</div>

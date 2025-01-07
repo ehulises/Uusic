@@ -1,0 +1,94 @@
+.button-small,
+.button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.button-small:hover,
+.button:hover {
+    background-color: var(--primary-focus-color);
+}
+
+.button-small {
+    padding: 5px 5px;
+}
+
+.circle-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    transition: all var(--transition-speed);
+}
+
+.circle-button-small {
+    padding: 10px;
+}
+
+.circle-button:hover {
+    background-color: var(--primary-focus-color);
+}
+
+.button-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bubble-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: fit-content;
+    /* Adjust this to limit visible bubbles */
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+}
+
+.bubble-checkbox-selected,
+.bubble-checkbox span {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--primary-focus-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* limit length of bubble text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    color: var(--text-color-light);
+}
+
+.bubble-checkbox-selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+.hidden-bubble {
+    display: none;
+}
+
+.selected-bubbles {
+    margin-top: 20px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 600px) {
+    .bubble-checkbox span {
+        max-width: 100px;
+        font-size: small;
+    }
+}

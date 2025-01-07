@@ -1,0 +1,29 @@
+/* modal.css */
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    min-height: 100vh;
+    min-width: 100vw;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    overflow: auto;
+    transition: all var(--transition-speed);
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
+    border-radius: 10px;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    max-width: 800px;
+}

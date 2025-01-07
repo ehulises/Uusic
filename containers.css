@@ -1,0 +1,262 @@
+.flex {
+    display: flex;
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-start-center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-end-center {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-center-start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-center-end {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.flex-evenly-center {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-space-around-center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-center-first {
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+}
+
+.flex-center-last {
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-gap-half {
+    gap: 0.5rem;
+}
+
+.flex-gap-1 {
+    gap: 1rem;
+}
+
+.flex-gap-2 {
+    gap: 2rem;
+}
+
+.flex-gap-3 {
+    gap: 3rem;
+}
+
+.flex-gap-4 {
+    gap: 4rem;
+}
+
+.flex-gap-5 {
+    gap: 5rem;
+}
+
+.flex-img {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-col-desktop-row-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row-desktop-col-mobile {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item {
+    flex: 1 1 auto;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.min-height-100 {
+    min-height: 100vh;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 1rem;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ratio-16-9 {
+    aspect-ratio: calc(16 / 9);
+}
+
+.image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.secondary-background {
+    background-color: var(--secondary-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.tile-container-secondary,
+.tile-container {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 1rem var(--shadow-color);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+    overflow: hidden;
+}
+
+.tile-container-secondary {
+    background-color: var(--secondary-color);
+}
+
+.tile-container-secondary:hover,
+.tile-container:hover {
+    box-shadow: 0 0 1rem var(--primary-color);
+}
+
+.pill {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    text-align: center;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.pill-small {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    text-align: center;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--hover-color);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll-y {
+    overflow-y: auto;
+}
+
+.max-height-5rem {
+    max-height: 5rem;
+    overflow: hidden;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.max-width-40rem {
+    max-width: 20rem;
+}
+
+.full-height {
+    height: 100%;
+}
+
+
+/* small screens */
+
+@media only screen and (max-width: 600px) {
+    .flex-col-desktop-row-mobile {
+        flex-direction: row;
+    }
+    .flex-row-desktop-col-mobile {
+        flex-direction: column;
+    }
+}

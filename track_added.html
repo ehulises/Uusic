@@ -1,0 +1,13 @@
+<div
+  class="flex-start-center flex-row flex-gap-1 full-width tile-container-secondary"
+  id="track-{{ track_id }}"
+>
+<h3> Added track successfully to {{ list }}</h3>
+</div>
+
+<script>
+    // delete this modal after 3 seconds
+    setTimeout(() => {
+        document.getElementById("track-{{ track_id }}").remove();
+    }, 3000);
+</script>

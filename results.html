@@ -1,0 +1,12 @@
+<h1>Search Results</h1>
+
+{% if tracks %}
+<div class="flex-start-center flex-col flex-gap-1 full-width" id="results-container">
+  {% for track in tracks %}
+    {% include 'snippets/track.html' %}
+  {% endfor %}
+</div>
+{% else %}
+<h2>No Results Found</h2>
+<p> Get started by selecting some tags above! </p>
+{% endif %}

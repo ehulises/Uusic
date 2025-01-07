@@ -1,0 +1,14 @@
+<div id="persona-list" class="flex-start-center flex-col full-width flex-gap-1">
+<!-- Refresh the list of personas -->
+<div class="flex-center-center flex-row flex-gap-2 full-width">
+    <h1>Personas</h1>
+    <button hx-get="{{ url_for('get_personas') }}" hx-swap="outerHTML" hx-target="#persona-list" class="button-small">
+    <h3 class="text-light">Refresh</h3>
+    </button>
+</div>
+
+{% for persona in personas %}
+  {% include 'snippets/persona.html' %}
+{% endfor %}
+
+</div>

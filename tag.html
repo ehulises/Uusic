@@ -1,0 +1,17 @@
+<!-- Accepts a tag object, with properties name, and active -->
+
+<!-- Use the "tag" vs "tag-selected" class based on the state -->
+
+<!-- If the tag is active, it should have the "tag-selected" class -->
+<div hx-post="{{ url_for('flip_tag', tag=tag.name)}}" hx-swap="outerHTML">
+    {% if tag.active %}
+    <div class="bubble-checkbox-selected">
+    {% else %}
+    <div class="bubble-checkbox">
+    {% endif %} 
+
+    <span>
+    {{ tag.name }}
+    </span>
+    </div>
+</div>

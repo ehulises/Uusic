@@ -1,0 +1,57 @@
+<!-- persona.html -->
+<div class="full-width tile-container-secondary">
+    {% if loop %}
+    <h1>Persona #{{ loop.index }}</h1>
+    {% else %}
+    <h1>Persona</h1>
+    {% endif %}
+
+    <h2> User Listening History </h2>
+    <table class="full-width table">
+        <tr>
+            <th>Track ID</th>
+            <th>Track Name</th>
+            <th>Preference</th>
+        </tr>
+        {% for lh_item in persona.listening_history %}
+        <tr>
+            <td>{{ lh_item.track_id }}</td>
+            <td>{{ lh_item.track_name }}</td>
+            <td>{{ lh_item.preference }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr></hr>
+
+    <h2> Hand-Picked Reccomendations </h2>
+    <table class="full-width table">
+        <tr>
+            <th>Track ID</th>
+            <th>Track Name</th>
+        </tr>
+        {% for rec_item in persona.reccomended_tracks %}
+        <tr>
+            <td>{{ rec_item.track_id }}</td>
+            <td>{{ rec_item.track_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr></hr>
+
+    <h2> Hated List </h2>
+    <table class="full-width table">
+        <tr>
+            <th>Track ID</th>
+            <th>Track Name</th>
+        </tr>
+        {% for nh_item in persona.not_reccomended_tracks %}
+        <tr>
+            <td>{{ nh_item.track_id }}</td>
+            <td>{{ nh_item.track_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>

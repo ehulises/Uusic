@@ -1,0 +1,104 @@
+<nav class="navbar">
+  <div class="navbar-item">
+    <a id="scroll-top" class="nav-link">
+      <div class="link-text">Persona Creator</div>
+    </a>
+  </div>
+
+  <div class="navbar-nav">
+    <div class="navbar-item">
+      <a id="scroll-search" class="nav-link">
+        <div class="link-text">Search</div>
+      </a>
+    </div>
+
+    <div class="navbar-item">
+      <a id="scroll-results" class="nav-link">
+        <div class="link-text">Results</div>
+      </a>
+    </div>
+
+    <div class="navbar-item">
+      <a id="scroll-personas" class="nav-link">
+        <div class="link-text">Personas</div>
+      </a>
+    </div>"
+
+  </div>
+</nav>
+
+<script>
+  // when the user scrolls down N pixels from the top of the document, change some css properties of the navbar
+  window.onscroll = function () {
+    scrollFunction()
+  }
+  
+  function scrollFunction() {
+    // if the user has scrolled down 80 pixels from the top of the document, change the navbar update the psuedo class
+    let navbar = document.getElementsByClassName('navbar')[0]
+    if (navbar == undefined) return
+  
+    let navlogos = document.getElementsByClassName('nav-logo')
+    let navlinks = document.getElementsByClassName('nav-link')
+  
+    // config
+    let scrollThreshold = 80
+    let navbarHeight = 'var(--navbar-height)'
+    let navbarBackgroundColor = 'var(--background-color)'
+    let navbarFontColor = 'var(--text-color)'
+  
+    let smallNavbarHeight = 'var(--navbar-height-small)'
+    let smallNavbarBackgroundColor = 'var(--secondary-color)'
+    let smallNavbarFontColor = 'var(--text-color)'
+  
+    // no filter normally
+    let navLogoNormalFilter = 'none'
+  
+    // make the logo white when the navbar is small
+    let navLogoSmallFilter = 'grayscale(100%)'
+  
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      navbar.style.height = smallNavbarHeight
+      navbar.style.backgroundColor = smallNavbarBackgroundColor
+  
+      for (let i = 0; i < navlogos.length; i++) {
+        navlogos[i].style.filter = navLogoSmallFilter
+      }
+  
+      for (let i = 0; i < navlinks.length; i++) {
+        navlinks[i].style.color = smallNavbarFontColor
+      }
+    } else {
+      navbar.style.height = navbarHeight
+      navbar.style.backgroundColor = navbarBackgroundColor
+  
+      for (let i = 0; i < navlogos.length; i++) {
+        navlogos[i].style.filter = navLogoNormalFilter
+      }
+  
+      for (let i = 0; i < navlinks.length; i++) {
+        navlinks[i].style.color = navbarFontColor
+      }
+    }
+  }
+  
+  let scrollOffset = 5 * 16 // 5rem
+  
+  // now for each of the navlinks, if the user clicks on it, scroll to the appropriate section
+  let navlinks = document.getElementsByClassName('nav-link')
+  for (let i = 0; i < navlinks.length; i++) {
+    console.log(navlinks[i])
+    navlinks[i].addEventListener('click', function (event) {
+      // event.preventDefault()
+      let id = this.id.split('-')[1]
+      if (id == 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        return
+      }
+  
+      let element = document.getElementById(id)
+      let y = element.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({ top: y - scrollOffset, behavior: 'smooth' })
+    })
+  }
+</script>

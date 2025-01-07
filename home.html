@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="body-container" id="search">
+    <h1>Search Options</h1>
+    <!-- Tags -->
+
+    <h2>Tags Filters</h2>
+    <div class="bubble-checkbox-group">
+      {% for tag in tags %}
+        {% include 'snippets/tag.html' %}
+      {% endfor %}
+    </div>
+
+
+    <br></br>
+    <!-- Reload Results -->
+    <div class="flex-center-end flex-col full-width" id="results">
+    <button hx-get="{{ url_for('search_tracks') }}" 
+      hx-swap="innerHTML" 
+      class="button" 
+      hx-target="#results-container"
+    >
+      <h2 class="text-light">Search</h2>
+    </button>
+    </div>
+
+  </div>
+
+  <div class="body-container secondary-background" id="results-container">
+    {% include 'snippets/results.html' %}
+  </div>
+
+  <div class="body-container" id="personas">
+    {% include 'snippets/persona_list.html' %}
+  </div>
+{% endblock %}
